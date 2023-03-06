@@ -1,0 +1,14 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: {{ $.Values.prometheus.name }}
+  namespace: {{ $.Values.prometheus.namespace }}
+spec:
+  groups:
+  - name: {{ $.Values.prometheus.groupname }}
+    rules:
+    - alert: {{ $.Values.prometheus.alert }}
+      expr: {{ $.Values.prometheus.expr }}
+      labels:
+        notifier: {{ $.Values.prometheus.notifier }}
