@@ -16,7 +16,7 @@ oauth:
     issuer: https://keycloak-keycloak.apps.argo-hub.sandbox2471.opentlc.com/realms/myrealm  
     name: keycloak
     secret: keycloak-secret
-    data: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyYTJkMmMwMC1kOGI3LTQyMTYtOTgwOS1mMTEyYzFiYjQ3MDkifQ.eyJleHAiOjE2ODY3NTA5MzcsImlhdCI6MTY3ODExMDkzNywianRpIjoiZWM2OGEzMjMtNGEyOS00M2NlLWEzZWQtNTg5NzU1ZWYxNTkyIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1rZXljbG9hay5hcHBzLmFyZ28taHViLnNhbmRib3gyNDcxLm9wZW50bGMuY29tL3JlYWxtcy9teXJlYWxtIiwiYXVkIjoiaHR0cHM6Ly9rZXljbG9hay1rZXljbG9hay5hcHBzLmFyZ28taHViLnNhbmRib3gyNDcxLm9wZW50bGMuY29tL3JlYWxtcy9teXJlYWxtIiwidHlwIjoiSW5pdGlhbEFjY2Vzc1Rva2VuIn0.oiIIFUlLg6KywhkJX0S329B7xh6D95ghFYGZ5sH5Nk0
+    data: ec68a323-4a29-43ce-a3ed-589755ef1592
     cm: keycloak-cm
       
 
