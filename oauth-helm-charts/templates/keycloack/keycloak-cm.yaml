@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $.Values.oauth.keycloak.cm }}
+  namespace: openshift-config
+data:
+  ca.crt: |
+{{ .Files.Get "certs/ca.crt" | indent 4 }}

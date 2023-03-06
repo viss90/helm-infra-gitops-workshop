@@ -1,0 +1,43 @@
+
+# Configure OAUTH
+
+oauth:
+  htpasswd:
+    name: htpass_provider
+    secret: htpass-secret
+    htpasswd: YWRtaW46JDJ5JDA1JGpGUTdwMnZlSUhCc01Ra0NEaHg5NmU1ci5GNFZOamJhdjc3YjkzSVJXVXRwcTF5cUtjOFlT
+    clusteradmin: admin-htpass
+  keycloak:
+    claims:
+      preferredUsername: preferred_username
+      name: name
+      email: email
+      groups: grups
+    issuer: https://keycloak-keycloak.apps.argo-hub.sandbox2471.opentlc.com/realms/myrealm  
+    name: keycloak
+    secret: keycloak-secret
+    data: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyYTJkMmMwMC1kOGI3LTQyMTYtOTgwOS1mMTEyYzFiYjQ3MDkifQ.eyJleHAiOjE2ODY3NTA5MzcsImlhdCI6MTY3ODExMDkzNywianRpIjoiZWM2OGEzMjMtNGEyOS00M2NlLWEzZWQtNTg5NzU1ZWYxNTkyIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1rZXljbG9hay5hcHBzLmFyZ28taHViLnNhbmRib3gyNDcxLm9wZW50bGMuY29tL3JlYWxtcy9teXJlYWxtIiwiYXVkIjoiaHR0cHM6Ly9rZXljbG9hay1rZXljbG9hay5hcHBzLmFyZ28taHViLnNhbmRib3gyNDcxLm9wZW50bGMuY29tL3JlYWxtcy9teXJlYWxtIiwidHlwIjoiSW5pdGlhbEFjY2Vzc1Rva2VuIn0.oiIIFUlLg6KywhkJX0S329B7xh6D95ghFYGZ5sH5Nk0
+    cm: keycloak-cm
+    # crt: |
+    #   -----BEGIN CERTIFICATE-----
+    #   MIIDDDCCAfSgAwIBAgIBATANBgkqhkiG9w0BAQsFADAmMSQwIgYDVQQDDBtpbmdy
+    #   ZXNzLW9wZXJhdG9yQDE2NzgwOTQ5ODcwHhcNMjMwMzA2MDkyOTQ2WhcNMjUwMzA1
+    #   MDkyOTQ3WjAmMSQwIgYDVQQDDBtpbmdyZXNzLW9wZXJhdG9yQDE2NzgwOTQ5ODcw
+    #   ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDRh1EUVHhKPrw1TVIIlmV4
+    #   +wXqq60X1/Scd33DYmd7dO1SMzA+rgCkZSk2hEGIcZumB20HNpHnuQxSbRzfXxxE
+    #   MOTQZHxV7+4sJ4QOkxDSDRupcaN/8aDnC9tGdZzTmwU7VIVzuY1g3RjwQpCcvQs3
+    #   oZaktjWXwzJOhtYbyvWrEeDDoS0vbiadgqgFkIYqinNvRj1nvNS/Kj3xcGvM2pib
+    #   JtfV0t1o3ENoqAYubl2nOn5Co1E1EajxFxYZdAVnFGSS5O3kECFbTY15p8vpeRxx
+    #   7LSdFWab5WTeJnSH0oJeF56Uy6UCcIHgQVLrLctlXeuEaemAv+IWHqS8AuwLNQ1P
+    #   AgMBAAGjRTBDMA4GA1UdDwEB/wQEAwICpDASBgNVHRMBAf8ECDAGAQH/AgEAMB0G
+    #   A1UdDgQWBBSJWZQnfTDGyT5l4AuIM7DCAJREnTANBgkqhkiG9w0BAQsFAAOCAQEA
+    #   f3Qfapk9al7w+kCTs0hKDmB6VEEr3//we1+VD4yPrHAJTr+kOBVAMx7n/a3IGRWo
+    #   YeFnhXNioRBXQhW/nKWQmhqIUEGy/uZcoIOIrB8gre4htwW4fqQnva9zdQWzu+Nu
+    #   BoQj3pZQWqLkT0ucIprnJzVWfznjGOAKrY6E4nuGChc+axUOv5SqOnqEg+tS0Uxa
+    #   lFZVszY6SdYsjIGz5I8BwREmjiLYnsiz8eZVpsSRxfwePS9UKyPMTjA8d9LG5xG1
+    #   hzJkVUOl3jhLqNLFsGs/6WmDyXn4Bk6fL4Itk6sBvX1pKk9vKUPM2sUQe4oA8pcF
+    #   Af+fiXftVMrMRmEhS09Vkg==
+    #   -----END CERTIFICATE-----
+      
+
+    

@@ -1,0 +1,31 @@
+apiVersion: config.openshift.io/v1
+kind: OAuth
+metadata:
+  name: cluster
+spec:
+  identityProviders:
+  - name: {{ $.Values.oauth.htpasswd.name }}
+    mappingMethod: claim 
+    type: HTPasswd
+    htpasswd:
+      fileData:
+        name: {{ $.Values.oauth.htpasswd.secret }}
+  - name: {{ $.Values.oauth.keycloak.name }} 
+    mappingMethod: claim 
+    type: OpenID
+    openID:
+      clientID: ... 
+      clientSecret: 
+        name: {{ $.Values.oauth.keycloak.secret }}
+      ca:
+        name: {{ $.Values.oauth.keycloak.cm }}
+      claims: 
+        preferredUsername:
+        - {{ $.Values.oauth.keycloak.claims.preferredUsername }}
+        name:
+        - {{ $.Values.oauth.keycloak.claims.name }}
+        email:
+        - {{ $.Values.oauth.keycloak.claims.email }}
+        groups:
+        - {{ $.Values.oauth.keycloak.claims.groups }}
+      issuer: {{ $.Values.oauth.keycloak.issuer }}
