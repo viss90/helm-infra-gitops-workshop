@@ -1,11 +1,12 @@
 
-# Configure OAUTH
+# Oauth values conf
 
 oauth:
   htpasswd:
     name: my_htpasswd_provider
     secret: htpass-secret
     htpasswd: YWRtaW46JDJ5JDA1JGpGUTdwMnZlSUhCc01Ra0NEaHg5NmU1ci5GNFZOamJhdjc3YjkzSVJXVXRwcTF5cUtjOFlT
+    # Update to create more users
     clusteradmin: admin-htpass
   keycloak:
     claims:

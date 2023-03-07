@@ -3,8 +3,6 @@ kind: ConfigMap
 metadata:
   name: {{ $.Values.oauth.keycloak.cm }}
   namespace: openshift-config
-annotations:
-  argocd.argoproj.io/compare-options: IgnoreExtraneous
 data:
   ca.crt: |
 {{ .Files.Get "certs/ca.crt" | indent 4 }}
