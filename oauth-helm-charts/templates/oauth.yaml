@@ -14,7 +14,7 @@ spec:
       mappingMethod: claim 
       type: OpenID
       openID:
-        clientID: ... 
+        clientID: {{ $.Values.oauth.keycloak.clientid }}
         clientSecret: 
           name: {{ $.Values.oauth.keycloak.secret }}
         ca:

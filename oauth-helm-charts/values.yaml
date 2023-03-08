@@ -9,6 +9,7 @@ oauth:
     # Update to create more users
     clusteradmin: admin-htpass
   keycloak:
+    clientid: myclient-1
     claims:
       preferredUsername: preferred_username
       name: name
