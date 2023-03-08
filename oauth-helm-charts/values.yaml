@@ -17,7 +17,7 @@ oauth:
     issuer: https://keycloak-keycloak.apps.argo-hub.sandbox1389.opentlc.com/realms/myrealm-1
     name: keycloak
     secret: keycloak-secret
-    data: 030ae743-e386-49bb-bea2-13dc2d91e819
+    data: Hxc5ueOljDLR2Y6HP7FgayMLpqgm97pJ
     cm: keycloak-cm
       
 
