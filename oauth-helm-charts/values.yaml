@@ -14,10 +14,10 @@ oauth:
       name: name
       email: email
       groups: grups
-    issuer: https://keycloak-keycloak.apps.argo-hub.sandbox2471.opentlc.com/realms/myrealm  
+    issuer: https://keycloak-keycloak.apps.argo-hub.sandbox2471.opentlc.com/realms/myrealm-1
     name: keycloak
     secret: keycloak-secret
-    data: ec68a323-4a29-43ce-a3ed-589755ef1592
+    data: 030ae743-e386-49bb-bea2-13dc2d91e819
     cm: keycloak-cm
       
 
