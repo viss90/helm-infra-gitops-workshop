@@ -25,22 +25,22 @@ operators:
   #   # csv: serverless-operator.v1.24.0
   #   source: redhat-operators
   #   sourcenamespace: openshift-marketplace
-  # kiali:
-  #   enabled: true
-  #   channel: stable
-  #   approval: Automatic
-  #   name: kiali-ossm
-  #   # csv: kiali-operator.v1.48.3
-  #   source: redhat-operators
-  #   sourcenamespace: openshift-marketplace
-  # jaeger:
-  #   enabled: true
-  #   channel: stable
-  #   approval: Automatic
-  #   name: jaeger-product
-  #   # csv: jaeger-operator.v1.38.0-2
-  #   source: redhat-operators
-  #   sourcenamespace: openshift-marketplace
+  kiali:
+    enabled: true
+    channel: stable
+    approval: Automatic
+    name: kiali-ossm
+    # csv: kiali-operator.v1.48.3
+    source: redhat-operators
+    sourcenamespace: openshift-marketplace
+  jaeger:
+    enabled: true
+    channel: stable
+    approval: Automatic
+    name: jaeger-product
+    # csv: jaeger-operator.v1.38.0-2
+    source: redhat-operators
+    sourcenamespace: openshift-marketplace
   servicemesh:
     enabled: true
     channel: stable
