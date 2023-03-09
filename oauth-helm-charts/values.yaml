@@ -5,7 +5,7 @@ oauth:
   htpasswd:
     name: my_htpasswd_provider
     secret: htpass-secret
-    htpasswd: YWRtaW46JDJ5JDA1JGpGUTdwMnZlSUhCc01Ra0NEaHg5NmU1ci5GNFZOamJhdjc3YjkzSVJXVXRwcTF5cUtjOFlT
+    htpasswd: YWRtaW46JDJ5JDA1JFJoa25sMG1EZm9aSjIuc1QyZ0FsaS5Gd2dLWXFWaHl0QkR2MEVrZUh2dXRrS2lJM3NSQkIuCnBldGVyOiQyeSQwNSRKUzF3ZUZVS1NpSFp5dWFBSDFJZjAuYU1kb05ycndrWklMS1d3SVJXY0JhUjJSMlYvQ3lCNgprYXJsYTokMnkkMDUkYmFNUi9RRHAva1VnczhDOFA3anI2ZXFwaE9nMm1uanIwZ2lnNkl3OUlQUnI2cVV5TnRlb0cKYW5uYTokMnkkMDUkZzVwazBXTG9qaHcxNUxhbWpKYy5FZURSRUlHSmsvcXZIRWIueFU1VGZoeFNIUDN4bG1Ibm0=
     # Update to create more users
     clusteradmin: admin-htpass
   keycloak:
