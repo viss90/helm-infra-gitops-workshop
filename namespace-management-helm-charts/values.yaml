@@ -3,6 +3,7 @@
 
 networkpolicy:
   name: deny-by-default
+  namespace: app
 resourcequota:
   objects:
     namespace: app
@@ -15,8 +16,8 @@ resourcequota:
       secrets: 10
       services: 10
   resources:
-    namespace:
-    name:
+    namespace: app
+    name: resources-by-namespace
     spec:
       requests:
         cpu: "1"
