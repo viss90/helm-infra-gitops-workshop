@@ -5,7 +5,7 @@ metadata:
   namespace: {{ $.Values.role.namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: Role
+  kind: ClusterRole
   name: {{ $.Values.role.roleref.name }}
 subjects:
 - apiGroup: rbac.authorization.k8s.io
