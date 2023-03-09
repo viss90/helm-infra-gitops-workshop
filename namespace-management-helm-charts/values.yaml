@@ -25,3 +25,26 @@ resourcequota:
       limits:
         cpu: "2"
         memory: "2Gi"
+role:
+  name: admin-0
+  namespace: app
+  roleref:
+    name: admin
+  subjects:
+    name: myuser-1
+clusterrole:
+  - name: cluster-reader-0
+    roleref:
+      name: cluster-reader
+    subjects:
+      name: peter
+  - name: edit-0
+    roleref:
+      name: edit
+    subjects:
+      name: anna     
+  - name: view-0
+    roleref:
+      name: view
+    subjects:
+      name: karla       
