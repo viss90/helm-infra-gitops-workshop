@@ -9,16 +9,13 @@ oauth:
     clusteradmin: admin-htpass
   keycloak:
     clientid: myclient-1
-    claims:
-      preferredUsername: preferred_username
-      name: name
-      email: email
-      groups: grups
     issuer: https://keycloak-keycloak.apps.argo-hub.sandbox1389.opentlc.com/realms/myrealm-1
     name: keycloak
     secret: keycloak-secret
     data: Hxc5ueOljDLR2Y6HP7FgayMLpqgm97pJ
     cm: keycloak-cm
-      
-
-    
+  ldap:
+    bindPassword: Passw0rd
+    bindDN: 'uid=ldap_admin,cn=users,cn=accounts,dc=redhatlabs,dc=dev'
+    base: "cn=student,cn=groups,cn=accounts,dc=redhatlabs,dc=dev"
+    domain: "dc=redhatlabs,dc=dev"

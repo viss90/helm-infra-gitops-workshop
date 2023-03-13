@@ -27,13 +27,31 @@ spec:
           name: {{ $.Values.oauth.keycloak.cm }}
         claims: 
           preferredUsername:
-          - {{ $.Values.oauth.keycloak.claims.preferredUsername }}
+          - preferred_username
           name:
-          - {{ $.Values.oauth.keycloak.claims.name }}
+          - name
           email:
-          - {{ $.Values.oauth.keycloak.claims.email }}
+          - email
           groups:
-          - {{ $.Values.oauth.keycloak.claims.groups }}
+          - grups
         issuer: {{ $.Values.oauth.keycloak.issuer }}
+    - name: ldapidp 
+      mappingMethod: claim 
+      type: LDAP
+      ldap:
+        attributes:
+          id: 
+          - dn
+          email: 
+          - mail
+          name: 
+          - cn
+          preferredUsername: 
+          - uid
+        bindDN: {{ $.Values.oauth.ldap.bindDN }} 
+        bindPassword: 
+          name: ldap-bind-password
+        insecure: true 
+        url: ldap://ipa.ipa.svc.cluster.local:389/{{ .Values.ldap.domain }}?uid?sub?(memberOf={{ .Values.ldap.base }})        
 {{- end -}}
 {{- end -}}

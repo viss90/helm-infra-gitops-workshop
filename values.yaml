@@ -15,6 +15,3 @@ global:
   argocd:
     enabled: true
     controller: openshift-gitops  
-
-oauth:
-  version: "v2"
