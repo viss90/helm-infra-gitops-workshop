@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ $.Values.ocp.cmname }}
-  namespace: openshift-monitoring
-data:
-  config.yaml: |
-    enableUserWorkload: true 

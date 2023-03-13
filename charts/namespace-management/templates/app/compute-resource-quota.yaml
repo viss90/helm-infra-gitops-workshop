@@ -1,0 +1,15 @@
+{{- if $.Values.global.render -}}
+{{- if $.Values.global.namespace.enabled -}}
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: {{ $.Values.resourcequota.resources.name }}
+  namespace: {{ $.Values.resourcequota.resources.namespace }}
+spec:
+  hard:
+    requests.cpu: {{ $.Values.resourcequota.resources.spec.requests.cpu }} 
+    requests.memory: {{ $.Values.resourcequota.resources.spec.requests.memory }}  
+    limits.cpu: {{ $.Values.resourcequota.resources.spec.limits.cpu }}  
+    limits.memory: {{ $.Values.resourcequota.resources.spec.limits.memory }} 
+{{- end -}}
+{{- end -}}    

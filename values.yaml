@@ -1,0 +1,20 @@
+global:
+  render: true
+  operators: 
+    enabled: false
+  oauth:
+    enabled: true
+  monitoring: 
+    enabled: false
+  namespace:
+    enabled: false
+  nmstate: 
+    enabled: false
+  sealed: 
+    enabled: false
+  argocd:
+    enabled: true
+    controller: openshift-gitops  
+
+oauth:
+  version: "v2"
