@@ -52,6 +52,6 @@ spec:
         bindPassword: 
           name: ldap-bind-password
         insecure: true 
-        url: ldap://ipa.ipa.svc.cluster.local:389/{{ .Values.ldap.domain }}?uid?sub?(memberOf={{ .Values.ldap.base }})        
+        url: ldap://ipa.ipa.svc.cluster.local:389/{{ .Values.oauth.ldap.domain }}?uid?sub?(memberOf={{ .Values.oauth.ldap.base }})        
 {{- end -}}
 {{- end -}}
