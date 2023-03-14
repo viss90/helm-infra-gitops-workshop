@@ -16,7 +16,7 @@ spec:
       htpasswd:
         fileData:
           name: {{ $.Values.oauth.htpasswd.secret }}
-    - name: {{ $.Values.oauth.keycloak.name }} 
+    - name: keycloak 
       mappingMethod: claim 
       type: OpenID
       openID:

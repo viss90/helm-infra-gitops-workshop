@@ -9,7 +9,6 @@ oauth:
   keycloak:
     clientid: myclient-4
     issuer: https://keycloak-keycloak.apps.argo-hub.sandbox1389.opentlc.com/realms/myrealm-4
-    name: keycloak
     secret: keycloak-secret
     data: Hxc5ueOljDLR2Y6HP7FgayMLpqgm97pJ
     cm: keycloak-cm
