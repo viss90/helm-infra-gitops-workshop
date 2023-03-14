@@ -31,7 +31,9 @@ ldap_sync:
   ldap_groups_filter: (&(objectclass=ipausergroup)(memberOf=cn=student,cn=groups,cn=accounts,dc=redhatlabs,dc=dev))
   ldap_groups_search_base: 'cn=groups,cn=accounts,dc=redhatlabs,dc=dev'
   ldap_groups_whitelist: ''
-  ldap_url: 'ldap://ipa-ipa.apps.argo-hub.sandbox1389.opentlc.com:389' #'ldap://ipa.ipa.svc.cluster.local:389'
+  ldap_url: 'ldap://ipa-ipa.apps.argo-hub.sandbox1389.opentlc.com'
+  #'ldap://ipa-ipa.apps.argo-hub.sandbox1389.opentlc.com:389' 
+  #'ldap://ipa.ipa.svc.cluster.local:389'
   ldap_user_name_attributes: '["uid"]'
   ldap_user_uid_attribute: dn
   ldap_users_search_base: 'cn=users,cn=accounts,dc=redhatlabs,dc=dev'

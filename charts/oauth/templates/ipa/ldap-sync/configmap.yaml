@@ -3,7 +3,7 @@ data:
   ldap-group-sync.yaml: |
     kind: "LDAPSyncConfig"
     apiVersion: "v1"
-    url: "{{ .Values.ldap_sync.ldap_url }}"
+    url: "{{ .Values.ldap_sync.ldap_url }}/{{ .Values.oauth.ldap.domain }}?uid?sub?(memberOf={{ .Values.oauth.ldap.base }}) "
     insecure: true
     bindDN: "{{ .Values.ldap_sync.ldap_bind_dn }}"
     bindPassword:
