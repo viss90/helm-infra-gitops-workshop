@@ -1,11 +1,10 @@
-
 # Install Operators
 
-catalogsources:
-  jumpapp:
-    enabled: true
-    image: registry.redhat.io/redhat/certified-operator-index:v4.11
-    publiser: Asier
+#catalogsources:
+#  jumpapp:
+#    enabled: true
+#    image: registry.redhat.io/redhat/certified-operator-index:v4.11
+#    publiser: Asier
 
 # Operator
 operators:
@@ -84,7 +83,4 @@ istio:
     version: v2.0
   smmr:
     namespaces:
-    - mesh-test
-    - jump-app-dev
-    - jump-app-pre
-    - jump-app-pro
+    - bookinfo

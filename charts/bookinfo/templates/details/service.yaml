@@ -1,0 +1,20 @@
+{{- if $.Values.global.render -}}
+{{- if $.Values.global.bookinfo.enabled -}}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: details
+  labels:
+    app: {{ $.Values.matchLabels.details.app }}
+    service: {{ $.Values.matchLabels.details.version }}
+spec:
+  ports:
+    - port: {{ $.Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ $.Values.matchLabels.details.app }}
+{{- end -}}
+{{- end -}}

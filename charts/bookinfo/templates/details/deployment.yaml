@@ -1,0 +1,39 @@
+{{- if $.Values.global.render -}}
+{{- if $.Values.global.bookinfo.enabled -}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: details-{{ $.Values.version }}
+  labels:
+    app: {{ $.Values.matchLabels.details.app }}
+    version: {{ $.Values.matchLabels.details.version }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ $.Values.matchLabels.details.app }}
+      version: {{ $.Values.matchLabels.details.version }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        app: {{ $.Values.matchLabels.details.app }}
+        version: {{ $.Values.matchLabels.details.version }}
+    spec:
+      serviceAccountName: {{ $.Values.serviceAccount.name }}
+      containers:
+        - name: {{ $.Values.resource.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ $.Values.image.repository }}-{{ $.Values.version }}:{{ $.Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ $.Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 9080
+              protocol: TCP
+{{- end -}}
+{{- end -}}

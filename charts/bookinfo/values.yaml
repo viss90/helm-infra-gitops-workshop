@@ -1,0 +1,53 @@
+replicaCount: 1
+
+version: "v1"
+
+resource:
+  name: bookinfo 
+
+matchLabels:
+  details:
+    app: details
+    version: v1
+  productpage:
+    app: productpage
+    version: v1
+  ratings:
+    app: ratings
+    version: v1
+  reviews:
+    app: reviews
+    version: v1
+
+image:
+  repository: docker.io/maistra/examples-bookinfo-details
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "0.12.0"
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: "details"
+
+securityContext:
+  capabilities:
+    drop:
+    - ALL
+  allowPrivilegeEscalation: false
+  runAsNonRoot: true
+  seccompProfile:
+    type: RuntimeDefault
+
+podAnnotations:
+  sidecar.istio.io/inject: "true"
+
+service:
+  port: 9080
+
+mesh:
+  trafficPolicy: ISTIO_MUTUAL
