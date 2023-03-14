@@ -1,13 +1,14 @@
 {{- if $.Values.global.render -}}
 {{- if $.Values.global.bookinfo.enabled -}}
+{{- range $key, $val := $.Values.apps }}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: details
+  name: {{ $key }}
   labels:
-    app: {{ $.Values.matchLabels.details.app }}
-    service: {{ $.Values.matchLabels.details.version }}
+    app: {{ $val.v1.matchLabels.app }}
+    service: {{ $val.v1.matchLabels.app }}
 spec:
   ports:
     - port: {{ $.Values.service.port }}
@@ -15,6 +16,7 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: {{ $.Values.matchLabels.details.app }}
+    app: {{ $val.v1.matchLabels.app }}
+{{- end }}
 {{- end -}}
 {{- end -}}
