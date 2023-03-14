@@ -19,3 +19,27 @@ oauth:
     bindDN: 'uid=ldap_admin,cn=users,cn=accounts,dc=redhatlabs,dc=dev'
     base: "cn=student,cn=groups,cn=accounts,dc=redhatlabs,dc=dev"
     domain: "dc=redhatlabs,dc=dev"
+  # values passed to the sync dependency must match the ones above
+ldap_sync:
+  ldap_bind_dn: 'uid=ldap_admin,cn=users,cn=accounts,dc=redhatlabs,dc=dev'
+  ldap_bind_password: 'Passw0rd'
+  ldap_group_membership_attributes: '["member"]'
+  ldap_group_name_attributes: '["cn"]'
+  ldap_group_uid_attribute: ipaUniqueID
+  # ldap_groups_filter: (&(objectclass=ipausergroup)(cn=student)) use this student is not a group of groups but just contains users
+  ldap_groups_filter: (&(objectclass=ipausergroup)(memberOf=cn=student,cn=groups,cn=accounts,dc=redhatlabs,dc=dev))
+  ldap_groups_search_base: 'cn=groups,cn=accounts,dc=redhatlabs,dc=dev'
+  ldap_groups_whitelist: ''
+  ldap_url: 'ldap://ipa.ipa.svc.cluster.local:389'
+  ldap_user_name_attributes: '["uid"]'
+  ldap_user_uid_attribute: dn
+  ldap_users_search_base: 'cn=users,cn=accounts,dc=redhatlabs,dc=dev'
+  namespace: ipa
+  schedule: '* * * * *'  # '@hourly'
+  failed_jobs_history_limit: "5"
+  image: registry.access.redhat.com/openshift3/ose-cli
+  image_tag: v3.11
+  job_name: cronjob-ldap-group-sync
+  job_service_account: ldap-group-syncer
+  success_jobs_history_limit: "5"
+  
