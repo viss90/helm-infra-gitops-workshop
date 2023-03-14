@@ -1,0 +1,20 @@
+{{- if $.Values.global.render -}}
+{{- if $.Values.global.bookinfo.enabled -}}
+{{- range $key, $val := $.Values.apps }}
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: {{ $key }}
+spec:
+  host: {{ $key }}
+  trafficPolicy:
+    tls:
+      mode: {{ $.Values.mesh.trafficPolicy }}
+  subsets:
+  - name: {{ $val.v1.version }}
+    labels:
+      version: {{ $val.v1.version }}
+{{- end }}
+{{- end -}}
+{{- end -}}
