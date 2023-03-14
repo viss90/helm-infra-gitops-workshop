@@ -6,6 +6,8 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: {{ $key }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "25"
 spec:
   host: {{ $key }}
   trafficPolicy:

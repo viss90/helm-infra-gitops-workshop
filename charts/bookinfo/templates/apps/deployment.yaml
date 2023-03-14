@@ -9,6 +9,8 @@ metadata:
   labels:
     app: {{ $val.v1.matchLabels.app }}
     version: {{ $val.v1.matchLabels.version }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
 spec:
   replicas: {{ $val.v1.replicaCount }}
   selector:

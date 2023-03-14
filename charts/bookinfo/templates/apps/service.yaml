@@ -9,6 +9,8 @@ metadata:
   labels:
     app: {{ $val.v1.matchLabels.app }}
     service: {{ $val.v1.matchLabels.app }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
 spec:
   ports:
     - port: {{ $.Values.service.port }}
