@@ -23,6 +23,7 @@ oauth:
 ldap_sync:
   ldap_bind_dn: 'uid=ldap_admin,cn=users,cn=accounts,dc=redhatlabs,dc=dev'
   ldap_bind_password: 'Passw0rd'
+  ldap_bind_password_secret: ldap-bind-password
   ldap_group_membership_attributes: '["member"]'
   ldap_group_name_attributes: '["cn"]'
   ldap_group_uid_attribute: ipaUniqueID
