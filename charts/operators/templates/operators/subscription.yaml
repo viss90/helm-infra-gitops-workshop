@@ -9,7 +9,7 @@ metadata:
   name: {{ $key }}
   namespace: {{ default "openshift-operators" $val.destnamespace }}
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   channel: {{ $val.channel }}
   installPlanApproval: {{ $val.approval }}
