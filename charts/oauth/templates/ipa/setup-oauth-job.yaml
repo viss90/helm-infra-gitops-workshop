@@ -35,8 +35,8 @@ spec:
                 oc patch oauth/cluster --type=json -p '[{"op":"add", "path":"/spec", "value":{"identityProviders":[]}}]'
             fi
             oc patch oauth/cluster --type=json -p '[{"op":"add", "path":"/spec/identityProviders/-",
-              "value":{"ldap": {"attributes": {"email": ["mail"], "id": ["dn"], "name": ["cn"], "uid": ["uid"]},
-              "bindDN": {{ .Values.oauth.ldap.bindDN }}, "bindPassword": {"name": "ldap-bind-password" },
+              "value":{"ldap": {"attributes": {"email": ["mail"], "id": ["dn"], "name": ["displayName"], "preferredUsername": ["uid"]},
+              "bindDN": {{ .Values.oauth.ldap.bindDN | quote }}, "bindPassword": {"name": "ldap-bind-password" },
               "insecure": true, "url": {{ .Values.oauth.ldap.sync.ldap_url }} },
               "mappingMethod": "claim", "name": "FreeIPA", "type": "LDAP"}}]'
             exit 0
