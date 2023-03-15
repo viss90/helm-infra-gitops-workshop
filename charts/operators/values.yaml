@@ -49,7 +49,7 @@ operators:
     source: redhat-operators
     sourcenamespace: openshift-marketplace
   nmstate:
-    enabled: true
+    enabled: false
     channel: stable
     approval: Automatic
     name: kubernetes-nmstate-operator
