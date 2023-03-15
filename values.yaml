@@ -1,9 +1,11 @@
 global:
   render: true
+  bookinfo:
+    enabled: true
   operators: 
     enabled: false
   oauth:
-    enabled: true
+    enabled: false
   monitoring: 
     enabled: false
   namespace:
@@ -14,4 +16,4 @@ global:
     enabled: false
   argocd:
     enabled: true
-    controller: openshift-gitops  
+    controller: openshift-gitops
