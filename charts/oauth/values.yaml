@@ -10,7 +10,7 @@ oauth:
     clientid: myclient-8
     issuer: https://keycloak-keycloak.apps.argo-hub.sandbox1389.opentlc.com/realms/myrealm-8
     secret: keycloak-secret
-    data: pz7ZdZEi0O8luHBpsIHrXUcHzNRHbNMk
+    data: 5QyPWvvLA8XvbxB92yqOq8u1lPJ20atd
     cm: keycloak-cm
   ldap:
     bindPassword: Passw0rd
