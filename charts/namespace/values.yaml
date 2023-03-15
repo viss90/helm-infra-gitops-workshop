@@ -34,31 +34,37 @@ role:
     name: myuser-1
 clusterrole:
   - name: cluster-reader-0
+    kind: User
     roleref:
       name: cluster-reader
     subjects:
       name: peter
   - name: edit-0
+    kind: User
     roleref:
       name: edit
     subjects:
       name: anna     
   - name: view-0
+    kind: User
     roleref:
       name: view
     subjects:
       name: karla       
   - name: admin-group
+    kind: Group
     roleref:
       name: admin
     subjects:
       group: ocp_admins   
   - name: edit-group
+    kind: Group
     roleref:
       name: edit
     subjects:
       group: ocp_dev       
   - name: view-group
+    kind: Group
     roleref:
       name: view
     subjects:

@@ -12,7 +12,7 @@ roleRef:
   name: {{ .roleref.name }}
 subjects:
 - apiGroup: rbac.authorization.k8s.io
-  kind: User
+  kind: {{ .subjects.kind }}
   name: {{ .subjects.name }}
 {{- end }}  
 {{- end -}}
