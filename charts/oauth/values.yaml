@@ -7,8 +7,8 @@ oauth:
     htpasswd: cGV0ZXI6JDJ5JDA1JEpTMXdlRlVLU2lIWnl1YUFIMUlmMC5hTWRvTnJyd2taSUxLV3dJUldjQmFSMlIyVi9DeUI2CmthcmxhOiQyeSQwNSRiYU1SL1FEcC9rVWdzOEM4UDdqcjZlcXBoT2cybW5qcjBnaWc2SXc5SVBScjZxVXlOdGVvRwphbm5hOiQyeSQwNSRnNXBrMFdMb2podzE1TGFtakpjLkVlRFJFSUdKay9xdkhFYi54VTVUZmh4U0hQM3hsbUhubQphZG1pbjokMnkkMDUkUmhrbmwwbURmb1pKMi5zVDJnQWxpLkZ3Z0tZcVZoeXRCRHYwRWtlSHZ1dGtLaUkzc1JCQi4=
     cluster_admin: admin-htpass
   keycloak:
-    clientid: myclient-4
-    issuer: https://keycloak-keycloak.apps.argo-hub.sandbox1389.opentlc.com/realms/myrealm-4
+    clientid: myclient-8
+    issuer: https://keycloak-keycloak.apps.argo-hub.sandbox1389.opentlc.com/realms/myrealm-8
     secret: keycloak-secret
     data: Hxc5ueOljDLR2Y6HP7FgayMLpqgm97pJ
     cm: keycloak-cm
@@ -18,7 +18,7 @@ oauth:
     base: "cn=student,cn=groups,cn=accounts,dc=redhatlabs,dc=dev"
     domain: "dc=redhatlabs,dc=dev"
     sync:
-      ldap_bind_dn: 'uid=ldap_admin,cn=users,cn=accounts,dc=redhatlabs,dc=dev'
+      #ldap_bind_dn: 'uid=ldap_admin,cn=users,cn=accounts,dc=redhatlabs,dc=dev'
       ldap_group_membership_attributes: '["member"]'
       ldap_group_name_attributes: '["cn"]'
       ldap_group_uid_attribute: ipaUniqueID
