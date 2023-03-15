@@ -3,7 +3,7 @@ global:
   bookinfo:
     enabled: true
   operators: 
-    enabled: false
+    enabled: true
   oauth:
     enabled: false
   monitoring: 
