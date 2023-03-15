@@ -7,7 +7,7 @@ data:
     apiVersion: "v1"
     url: "{{ .Values.oauth.ldap.sync.ldap_url }}" 
     insecure: true
-    bindDN: "{{ .Values.oauth.ldap.sync.ldap_bind_dn }}"
+    bindDN: "{{ .Values.oauth.ldap.bindDN }}"
     bindPassword:
       file: "/etc/secrets/bind_password"
     rfc2307:
