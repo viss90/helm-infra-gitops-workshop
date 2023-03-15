@@ -7,8 +7,8 @@ kind: Service
 metadata:
   name: {{ $key }}
   labels:
-    app: {{ $val.v1.matchLabels.app }}
-    service: {{ $val.v1.matchLabels.app }}
+    app: {{ $key }}
+    service: {{ $key }}
   annotations:
     argocd.argoproj.io/sync-wave: "15"
 spec:
@@ -18,7 +18,7 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: {{ $val.v1.matchLabels.app }}
+    app: {{ $key }}
 {{- end }}
 {{- end -}}
 {{- end -}}

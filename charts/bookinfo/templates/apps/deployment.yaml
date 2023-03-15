@@ -1,22 +1,23 @@
 {{- if $.Values.global.render -}}
 {{- if $.Values.global.bookinfo.enabled -}}
-{{- range $key, $val := $.Values.apps }}
+{{- range $key, $val := $.Values.apps -}}
+{{- range $ver, $ker := $val }}
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ $key }}-{{ $val.v1.version }}
+  name: {{ $key }}-{{ $ker.version }}
   labels:
-    app: {{ $val.v1.matchLabels.app }}
-    version: {{ $val.v1.matchLabels.version }}
+    app: {{ $ker.matchLabels.app }}
+    version: {{ $ker.matchLabels.version }}
   annotations:
     argocd.argoproj.io/sync-wave: "15"
 spec:
-  replicas: {{ $val.v1.replicaCount }}
+  replicas: {{ $ker.replicaCount }}
   selector:
     matchLabels:
-      app: {{ $val.v1.matchLabels.app }}
-      version: {{ $val.v1.matchLabels.version }}
+      app: {{ $ker.matchLabels.app }}
+      version: {{ $ker.matchLabels.version }}
   template:
     metadata:
       {{- with $.Values.podAnnotations }}
@@ -24,20 +25,21 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        app: {{ $val.v1.matchLabels.app }}
-        version: {{ $val.v1.matchLabels.version }}
+        app: {{ $ker.matchLabels.app }}
+        version: {{ $ker.matchLabels.version }}
     spec:
-      serviceAccountName: {{ $.Values.resource.name }}-{{ $val.v1.serviceAccount.name }}
+      serviceAccountName: {{ $.Values.resource.name }}-{{ $key }}
       containers:
         - name: {{ $key }}
           securityContext:
             {{- toYaml $.Values.securityContext | nindent 12 }}
-          image: "{{ $val.v1.image.repository }}-{{ $val.v1.version }}:{{ $val.v1.image.tag | default $.Chart.AppVersion }}"
-          imagePullPolicy: {{ $val.v1.image.pullPolicy }}
+          image: "{{ $ker.image.repository }}-{{ $ker.version }}:{{ $ker.image.tag | default $.Chart.AppVersion }}"
+          imagePullPolicy: {{ $ker.image.pullPolicy }}
           ports:
             - name: http
               containerPort: 9080
               protocol: TCP
 {{- end }}
+{{- end -}}
 {{- end -}}
 {{- end -}}

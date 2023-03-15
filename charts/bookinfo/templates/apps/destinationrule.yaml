@@ -14,9 +14,11 @@ spec:
     tls:
       mode: {{ $.Values.mesh.trafficPolicy }}
   subsets:
-  - name: {{ $val.v1.version }}
+  {{- range $ver, $ker := $val }}
+  - name: {{ $ker.version }}
     labels:
-      version: {{ $val.v1.version }}
+      version: {{ $ker.version }}
+  {{- end }}
 {{- end }}
 {{- end -}}
 {{- end -}}
