@@ -3,7 +3,7 @@ global:
   bookinfo:
     enabled: true
   operators: 
-    enabled: true
+    enabled: false
   oauth:
     enabled: false
   monitoring: 
@@ -16,7 +16,4 @@ global:
     enabled: false
   argocd:
     enabled: true
-    controller: openshift-gitops  
-
-oauth:
-  version: "v2"
+    controller: openshift-gitops

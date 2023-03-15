@@ -1,6 +1,6 @@
 apiVersion: v2
-name: nmstate-helm-charts
-description: A Helm chart for Kubernetes
+name: nmstate
+description: A Helm chart to configure OCP nodes with NMstate
 
 # A chart can be either an 'application' or a 'library' chart.
 #
