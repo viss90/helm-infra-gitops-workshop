@@ -2,6 +2,7 @@
 # OPC Oauth configuration
 
 oauth:
+  config_oauth_namespace: openshift-config
   htpasswd:
     secret: htpass-secret
     #htpasswd: cGV0ZXI6JDJ5JDA1JEpTMXdlRlVLU2lIWnl1YUFIMUlmMC5hTWRvTnJyd2taSUxLV3dJUldjQmFSMlIyVi9DeUI2CmthcmxhOiQyeSQwNSRiYU1SL1FEcC9rVWdzOEM4UDdqcjZlcXBoT2cybW5qcjBnaWc2SXc5SVBScjZxVXlOdGVvRwphbm5hOiQyeSQwNSRnNXBrMFdMb2podzE1TGFtakpjLkVlRFJFSUdKay9xdkhFYi54VTVUZmh4U0hQM3hsbUhubQphZG1pbjokMnkkMDUkUmhrbmwwbURmb1pKMi5zVDJnQWxpLkZ3Z0tZcVZoeXRCRHYwRWtlSHZ1dGtLaUkzc1JCQi4=
