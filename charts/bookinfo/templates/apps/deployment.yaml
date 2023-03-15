@@ -10,8 +10,10 @@ metadata:
   labels:
     app: {{ $ker.matchLabels.app }}
     version: {{ $ker.matchLabels.version }}
+  {{- if $.Values.global.argocd.enabled }}
   annotations:
     argocd.argoproj.io/sync-wave: "15"
+  {{- end }}
 spec:
   replicas: {{ $ker.replicaCount }}
   selector:
