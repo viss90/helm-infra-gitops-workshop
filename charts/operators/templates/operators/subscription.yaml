@@ -7,7 +7,11 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: {{ $key }}
-  namespace: openshift-operators
+  namespace: {{ default "openshift-operators" $val.destnamespace }}
+{{- if $.Values.global.argocd.enabled }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+{{- end }}
 spec:
   channel: {{ $val.channel }}
   installPlanApproval: {{ $val.approval }}
