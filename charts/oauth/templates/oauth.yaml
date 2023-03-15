@@ -15,43 +15,6 @@ spec:
       type: HTPasswd
       htpasswd:
         fileData:
-          name: {{ $.Values.oauth.htpasswd.secret }}
-    - name: keycloak 
-      mappingMethod: claim 
-      type: OpenID
-      openID:
-        clientID: {{ $.Values.oauth.keycloak.clientid }}
-        clientSecret: 
-          name: {{ $.Values.oauth.keycloak.secret }}
-        ca:
-          name: {{ $.Values.oauth.keycloak.cm }}
-        claims: 
-          preferredUsername:
-          - preferred_username
-          name:
-          - name
-          email:
-          - email
-          groups:
-          - grups
-        issuer: {{ $.Values.oauth.keycloak.issuer }}
-    - name: ldapidp 
-      mappingMethod: claim 
-      type: LDAP
-      ldap:
-        attributes:
-          id: 
-          - dn
-          email: 
-          - mail
-          name: 
-          - cn
-          preferredUsername: 
-          - uid
-        bindDN: {{ $.Values.oauth.ldap.bindDN }} 
-        bindPassword: 
-          name: ldap-bind-password
-        insecure: true 
-        url: ldap://ipa.ipa.svc.cluster.local:389/{{ .Values.oauth.ldap.domain }}?uid?sub?(memberOf={{ .Values.oauth.ldap.base }})        
+          name: {{ $.Values.oauth.htpasswd.secret }}   
 {{- end -}}
 {{- end -}}
