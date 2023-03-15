@@ -9,8 +9,10 @@ metadata:
     kubernetes.io/metadata.name: openshift-nmstate
     name: {{ $.Values.nmstate.namespace }}
     argocd.argoproj.io/managed-by: {{ $.Values.argocd.controller }}
+{{- if $.Values.global.argocd.enabled }}
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
+{{- end }}
   name: {{ $.Values.nmstate.namespace }}
 spec:
   finalizers:
