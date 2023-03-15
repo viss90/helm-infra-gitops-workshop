@@ -55,17 +55,17 @@ clusterrole:
     roleref:
       name: admin
     subjects:
-      group: ocp_admins   
+      name: ocp_admins   
       kind: Group
   - name: edit-group
     roleref:
       name: edit
     subjects:
-      group: ocp_dev   
+      name: ocp_dev   
       kind: Group    
   - name: view-group
     roleref:
       name: view
     subjects:
-      group: ocp_viewers      
+      name: ocp_viewers      
       kind: Group          
