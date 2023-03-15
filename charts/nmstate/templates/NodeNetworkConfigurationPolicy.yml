@@ -6,6 +6,7 @@ kind: NodeNetworkConfigurationPolicy
 metadata:
   name: {{ $.Values.global.nmstate.hostname }}
   annotations:
+    argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/sync-wave: "2"
 spec:
   nodeSelector:
