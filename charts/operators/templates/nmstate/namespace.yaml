@@ -1,0 +1,20 @@
+{{- if $.Values.global.render -}}
+{{- if $.Values.global.operators.enabled -}}
+{{- if $.Values.global.nmstate.enabled -}}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: openshift-nmstate
+    name: {{ $.Values.nmstate.namespace }}
+    argocd.argoproj.io/managed-by: {{ $.Values.argocd.controller }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "-15"
+  name: {{ $.Values.nmstate.namespace }}
+spec:
+  finalizers:
+  - kubernetes
+{{- end -}}
+{{- end -}}
+{{- end -}}  

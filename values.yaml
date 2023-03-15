@@ -3,7 +3,7 @@ global:
   operators: 
     enabled: false
   oauth:
-    enabled: true
+    enabled: false
   monitoring: 
     enabled: false
   namespace:

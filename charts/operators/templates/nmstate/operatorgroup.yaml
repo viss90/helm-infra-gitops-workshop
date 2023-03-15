@@ -1,0 +1,19 @@
+{{- if $.Values.global.render -}}
+{{- if $.Values.global.operators.enabled -}}
+{{- if $.Values.global.nmstate.enabled -}}
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  generateName: openshift-nmstate-
+  annotations:
+    olm.providedAPIs: NMState.v1.nmstate.io
+  name: openshift-nmstate-sno
+  namespace: {{ $.Values.nmstate.namespace }}
+spec:
+  targetNamespaces:
+    - openshift-nmstate
+  upgradeStrategy: Default
+{{- end -}}
+{{- end -}}
+{{- end -}}
