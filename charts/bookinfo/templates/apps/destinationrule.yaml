@@ -1,0 +1,26 @@
+{{- if $.Values.global.render -}}
+{{- if $.Values.global.bookinfo.enabled -}}
+{{- range $key, $val := $.Values.apps }}
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: {{ $key }}
+  {{- if $.Values.global.argocd.enabled }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "25"
+  {{- end }}
+spec:
+  host: {{ $key }}
+  trafficPolicy:
+    tls:
+      mode: {{ $.Values.mesh.trafficPolicy }}
+  subsets:
+  {{- range $ver, $ker := $val }}
+  - name: {{ $ker.version }}
+    labels:
+      version: {{ $ker.version }}
+  {{- end }}
+{{- end }}
+{{- end -}}
+{{- end -}}

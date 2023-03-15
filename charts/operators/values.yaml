@@ -1,4 +1,3 @@
-
 # Operator
 operators:
   tekton:
@@ -84,7 +83,7 @@ istio:
     version: v2.3
   smmr:
     namespaces:
-    - mesh-test
+    - bookinfo
 
 nmstate:
   enabled: true

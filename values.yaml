@@ -1,5 +1,7 @@
 global:
   render: true
+  bookinfo:
+    enabled: true
   operators: 
     enabled: false
   oauth:
