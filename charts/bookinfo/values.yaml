@@ -61,6 +61,17 @@ apps:
         pullPolicy: IfNotPresent
         # Overrides the image tag whose default is the chart appVersion.
         tag: "0.12.0"
+    v3:
+      replicaCount: 2
+      version: "v3"
+      matchLabels:
+        app: reviews
+        version: v3
+      image:
+        repository: docker.io/maistra/examples-bookinfo-reviews
+        pullPolicy: IfNotPresent
+        # Overrides the image tag whose default is the chart appVersion.
+        tag: "0.12.0"
 
 serviceAccount:
   create: true
