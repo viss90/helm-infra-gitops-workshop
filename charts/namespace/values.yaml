@@ -48,3 +48,18 @@ clusterrole:
       name: view
     subjects:
       name: karla       
+  - name: admin-group
+    roleref:
+      name: admin
+    subjects:
+      group: ocp_admins   
+  - name: edit-group
+    roleref:
+      name: edit
+    subjects:
+      group: ocp_dev       
+  - name: view-group
+    roleref:
+      name: view
+    subjects:
+      group: ocp_viewers                
