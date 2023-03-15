@@ -1,0 +1,24 @@
+{{- if $.Values.global.render -}}
+{{- if $.Values.global.operators.enabled -}}
+{{- if $.Values.global.nmstate.enabled -}}
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: {{ $.Values.global.nmstate.hostname }}
+  # annotations:
+  #   argocd.argoproj.io/sync-wave: "10"
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: {{ $.Values.global.nmstate.hostname }}
+  desiredState:
+    interfaces:
+      - name: ens6
+        description: DDBB network
+        type: ethernet
+        state: up
+        ipv4:
+          dhcp: true
+          enabled: true
+{{- end -}}
+{{- end -}}
+{{- end -}}
