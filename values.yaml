@@ -1,11 +1,11 @@
 global:
   render: true
   bookinfo:
-    enabled: true
+    enabled: false
   operators: 
     enabled: false
   oauth:
-    enabled: false
+    enabled: true
   monitoring: 
     enabled: false
   namespace:
