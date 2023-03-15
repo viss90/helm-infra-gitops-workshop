@@ -10,7 +10,7 @@ metadata:
     name: {{ $.Values.nmstate.namespace }}
     argocd.argoproj.io/managed-by: {{ $.Values.argocd.controller }}
   annotations:
-    argocd.argoproj.io/sync-wave: "-15"
+    argocd.argoproj.io/sync-wave: "-10"
   name: {{ $.Values.nmstate.namespace }}
 spec:
   finalizers:

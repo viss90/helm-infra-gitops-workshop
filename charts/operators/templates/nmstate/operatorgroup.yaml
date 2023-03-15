@@ -8,6 +8,7 @@ metadata:
   generateName: openshift-nmstate-
   annotations:
     olm.providedAPIs: NMState.v1.nmstate.io
+    argocd.argoproj.io/sync-wave: "-10"
   name: openshift-nmstate-sno
   namespace: {{ $.Values.nmstate.namespace }}
 spec:
