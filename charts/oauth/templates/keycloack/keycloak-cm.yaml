@@ -11,6 +11,6 @@ metadata:
 {{- end }}    
 data:
   ca.crt: |
-{{ .Files.Get "certs/ca.crt" | indent 4 }}
+{{ .Files.Get "files/ca.crt" | indent 4 }}
 {{- end -}}
 {{- end -}}
