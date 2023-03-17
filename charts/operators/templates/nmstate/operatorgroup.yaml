@@ -12,7 +12,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "0"
 {{- end }}
   name: openshift-nmstate-sno
-  namespace: {{ $.Values.nmstate.namespace }}
+  namespace: {{ $.Values.operators.nmstate.namespace }}
 spec:
   targetNamespaces:
     - openshift-nmstate
