@@ -3,9 +3,9 @@ global:
   bookinfo:
     enabled: false
   operators: 
-    enabled: false
+    enabled: true
   oauth:
-    enabled: false
+    enabled: true
   monitoring: 
     enabled: false
   namespace:

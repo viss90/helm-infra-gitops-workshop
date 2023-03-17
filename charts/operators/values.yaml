@@ -66,7 +66,7 @@ operators:
 
 # Istio Settings
 istio:
-  enabled: false
+  enabled: true
   namespace: istio-system
   controlplane: basic
   smcp:
