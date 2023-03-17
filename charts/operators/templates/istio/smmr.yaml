@@ -6,7 +6,7 @@ kind: ServiceMeshMemberRoll
 metadata:
   name: default
   namespace: {{ $.Values.istio.namespace }}
-  {{- if $.Values.argocd.enabled }}
+  {{- if $.Values.global.argocd.enabled }}
   annotations:
     argocd.argoproj.io/sync-wave: "10"
   {{- end }}

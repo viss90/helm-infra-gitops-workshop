@@ -17,7 +17,7 @@ operators:
     source: redhat-operators
     sourcenamespace: openshift-marketplace
   kiali:
-    enabled: false
+    enabled: true
     channel: stable
     approval: Automatic
     name: kiali-ossm
@@ -25,7 +25,7 @@ operators:
     source: redhat-operators
     sourcenamespace: openshift-marketplace
   jaeger:
-    enabled: false
+    enabled: true
     channel: stable
     approval: Automatic
     name: jaeger-product
@@ -33,7 +33,7 @@ operators:
     source: redhat-operators
     sourcenamespace: openshift-marketplace
   servicemesh:
-    enabled: false
+    enabled: true
     channel: stable
     approval: Automatic
     name: servicemeshoperator
@@ -41,7 +41,7 @@ operators:
     source: redhat-operators
     sourcenamespace: openshift-marketplace
   gitops:
-    enabled: false
+    enabled: true
     channel: stable
     approval: Automatic
     name: openshift-gitops-operator
@@ -49,7 +49,7 @@ operators:
     source: redhat-operators
     sourcenamespace: openshift-marketplace
   nmstate:
-    enabled: true
+    enabled: false
     channel: stable
     approval: Automatic
     name: kubernetes-nmstate-operator
@@ -57,13 +57,9 @@ operators:
     sourcenamespace: openshift-marketplace
     destnamespace: openshift-nmstate
 
-argocd:
-  enabled: false
-  controller: openshift-gitops
-
 # Istio Settings
 istio:
-  enabled: false
+  enabled: true
   namespace: istio-system
   controlplane: basic
   smcp:
