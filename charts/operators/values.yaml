@@ -49,7 +49,7 @@ operators:
     source: redhat-operators
     sourcenamespace: openshift-marketplace
   nmstate:
-    enabled: false
+    enabled: true
     channel: stable
     approval: Automatic
     name: kubernetes-nmstate-operator
@@ -59,7 +59,7 @@ operators:
 
 # Istio Settings
 istio:
-  enabled: true
+  enabled: false
   namespace: istio-system
   controlplane: basic
   smcp:
@@ -82,5 +82,5 @@ istio:
     - bookinfo
 
 nmstate:
-  enabled: true
+  enabled: false
   namespace: openshift-nmstate

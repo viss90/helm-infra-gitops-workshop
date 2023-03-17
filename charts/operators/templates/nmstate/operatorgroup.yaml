@@ -1,6 +1,6 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.operators.enabled -}}
 {{- if $.Values.global.nmstate.enabled -}}
+{{- if $.Values.operators.nmstate.enabled -}}
 ---
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup

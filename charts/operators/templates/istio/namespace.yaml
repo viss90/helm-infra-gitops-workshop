@@ -1,7 +1,8 @@
 {{- if $.Values.global.render -}}
 {{- if $.Values.global.operators.enabled -}}
-{{- if $.Values.istio.enabled }}
-{{- range $.Values.istio.smmr.namespaces }}
+{{- if $.Values.operators.servicemesh.enabled -}}
+{{- if $.Values.istio.enabled -}}
+{{- range $.Values.istio.smmr.namespaces -}}
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -23,7 +24,8 @@ metadata:
     argocd.argoproj.io/managed-by: {{ $.Values.global.argocd.controller }}
   annotations:
     argocd.argoproj.io/sync-wave: "-15"
-{{- end }}
-{{- end }}
 {{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}  
 {{- end -}}  
