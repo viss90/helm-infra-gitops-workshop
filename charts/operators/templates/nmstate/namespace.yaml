@@ -1,5 +1,5 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.nmstate.enabled -}}
+{{- if $.Values.global.operators.enabled -}}
 {{- if $.Values.operators.nmstate.enabled -}}
 ---
 apiVersion: v1
@@ -19,4 +19,4 @@ spec:
   - kubernetes
 {{- end -}}
 {{- end -}}
-{{- end -}}  
+{{- end -}}
