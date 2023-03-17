@@ -3,7 +3,7 @@ global:
   bookinfo:
     enabled: false
   operators: 
-    enabled: true
+    enabled: false
   oauth:
     enabled: false
   monitoring: 
@@ -11,7 +11,7 @@ global:
   namespace:
     enabled: false
   nmstate: 
-    enabled: true
+    enabled: false
   sealed: 
     enabled: false
   argocd:
