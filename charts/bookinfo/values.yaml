@@ -1,6 +1,7 @@
 resource:
   name: bookinfo 
-
+  namespace: bookinfo
+  
 apps:
   details:
     v1:

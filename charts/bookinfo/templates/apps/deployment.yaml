@@ -7,6 +7,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ $key }}-{{ $ker.version }}
+  namespace: {{ $.Values.resources.namespace }}
   labels:
     app: {{ $ker.matchLabels.app }}
     version: {{ $ker.matchLabels.version }}

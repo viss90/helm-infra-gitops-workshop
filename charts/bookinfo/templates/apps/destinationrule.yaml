@@ -6,6 +6,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: {{ $key }}
+  namespace: {{ $.Values.resources.namespace }}  
   {{- if $.Values.global.argocd.enabled }}
   annotations:
     argocd.argoproj.io/sync-wave: "25"
