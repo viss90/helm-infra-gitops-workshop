@@ -1,16 +1,12 @@
 {{- if $.Values.global.render -}}
 {{- if $.Values.global.oauth.enabled -}}
 apiVersion: v1
-kind: Secret
+kind: Namespace
 metadata:
-  name: {{ $.Values.oauth.htpasswd.secret }}
-  namespace: openshift-config
+  name: {{ .Values.oauth.ldap.sync.namespace }}
 {{- if $.Values.global.argocd.enabled }}
   annotations:
     argocd.argoproj.io/sync-wave: "-15"
 {{- end }}    
-type: Opaque
-data:
-  htpasswd: {{ .Files.Get "files/htpasswd" | b64enc }} 
 {{- end -}}
-{{- end -}}  
+{{- end -}}

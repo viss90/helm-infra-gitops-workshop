@@ -1,0 +1,51 @@
+{{- if $.Values.global.render -}}
+{{- if $.Values.global.oauth.enabled -}}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  labels:
+    template: cronjob-ldap-group-sync
+  name: {{ .Values.oauth.ldap.sync.job_name }}
+  namespace: {{ .Values.oauth.ldap.sync.namespace }}
+{{- if $.Values.global.argocd.enabled }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+{{- end }}    
+spec:
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: {{ .Values.oauth.ldap.sync.failed_jobs_history_limit }}
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          activeDeadlineSeconds: 500
+          containers:
+          - command:
+            - /bin/bash
+            - -c
+            - oc adm groups sync --sync-config=/etc/config/ldap-group-sync.yaml --confirm
+              $([ -s /etc/config/whitelist.txt ] && echo --whitelist=/etc/config/whitelist.txt)
+            image: {{ .Values.oauth.ldap.sync.image }}:{{ .Values.oauth.ldap.sync.image_tag }}
+            name: {{ .Values.oauth.ldap.sync.job_name }}
+            volumeMounts:
+            - mountPath: /etc/config
+              name: ldap-sync-volume
+            - mountPath: /etc/secrets
+              name: ldap-bind-password
+          dnsPolicy: ClusterFirst
+          restartPolicy: Never
+          serviceAccount: {{ .Values.oauth.ldap.sync.job_service_account }}
+          serviceAccountName: {{ .Values.oauth.ldap.sync.job_service_account }}
+          terminationGracePeriodSeconds: 30
+          volumes:
+          - configMap:
+              name: ldap-config
+            name: ldap-sync-volume
+          - name: ldap-bind-password
+            secret:
+              secretName: ldap-bind-password
+  schedule: {{ .Values.oauth.ldap.sync.schedule | quote }}
+  successfulJobsHistoryLimit: {{ .Values.oauth.ldap.sync.success_jobs_history_limit }}
+{{- end -}}
+{{- end -}}
