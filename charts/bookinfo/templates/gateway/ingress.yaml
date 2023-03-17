@@ -5,7 +5,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: {{ $.Values.resource.name }}-gateway
-  namespace: {{ $.Values.resources.namespace }}    
+  namespace: {{ $.Values.resource.namespace }}     
   {{- if $.Values.global.argocd.enabled }}
   annotations:
     argocd.argoproj.io/sync-wave: "20"
