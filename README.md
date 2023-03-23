@@ -26,8 +26,8 @@ metadata:
   namespace: openshift-operators
 spec:
   destination:
-    server: 'https://api.sno-8.sandbox1389.opentlc.com:6443'
-  project: project-sno-8
+    server: 'https://kubernetes.default.svc'
+  project: default
   source:
     helm:
       parameters:
@@ -36,9 +36,11 @@ spec:
         - name: global.operators.enabled
           value: 'true'
         - name: global.nmstate.enabled
-          value: 'true'
+          value: 'false'
+        - name: operators.nmstate.enabled
+          value: 'false'            
         - name: global.bookinfo.enabled
-          value: 'true'          
+          value: 'false'          
       valueFiles:
         - charts/operators/values.yaml
         - charts/oauth/values.yaml
