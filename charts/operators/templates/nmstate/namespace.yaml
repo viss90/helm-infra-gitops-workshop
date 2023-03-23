@@ -10,6 +10,8 @@ metadata:
     name: {{ $.Values.operators.nmstate.namespace }}
     argocd.argoproj.io/managed-by: {{ $.Values.global.argocd.controller }}
 {{- if $.Values.global.argocd.enabled }}
+  labels:
+    argocd.argoproj.io/managed-by: {{ $.Values.global.argocd.controller }}
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
 {{- end }}

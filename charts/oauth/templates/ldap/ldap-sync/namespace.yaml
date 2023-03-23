@@ -5,6 +5,8 @@ kind: Namespace
 metadata:
   name: {{ .Values.oauth.ldap.sync.namespace }}
 {{- if $.Values.global.argocd.enabled }}
+  labels:
+    argocd.argoproj.io/managed-by: {{ $.Values.global.argocd.controller }}
   annotations:
     argocd.argoproj.io/sync-wave: "-15"
 {{- end }}    
