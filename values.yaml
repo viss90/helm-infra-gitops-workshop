@@ -16,4 +16,4 @@ global:
     enabled: false
   argocd:
     enabled: true
-    controller: openshift-operators
+    controller: argocd #openshift-operators
