@@ -26,10 +26,6 @@ dependencies:
   version: "0.1.0"
   repository: "file://./charts/nmstate"
   condition: nmstate.enabled
-- name: sealed
-  version: "0.1.0"
-  repository: "file://./charts/sealed"
-  condition: sealed.enabled
 # - name: argocd
 #   version: "0.1.0"
 #   repository: "file://./charts/argocd"
