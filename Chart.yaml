@@ -5,31 +5,31 @@ type: application
 version: 0.1.0
 appVersion: "1.16.0"
 
-# dependencies:
-# - name: operators
-#   version: "0.1.0"
-#   repository: "file://./charts/operators"
-#   condition: operators.enabled
-# - name: oauth
-#   version: "0.1.0"
-#   repository: "file://./charts/oauth"
-#   condition: oauth.enabled
-# - name: monitoring
-#   version: "0.1.0"
-#   repository: "file://./charts/monitoring"
-#   condition: monitoring.enabled
-# - name: namespace
-#   version: "0.1.0"
-#   repository: "file://./charts/namespace"
-#   condition: namespace.enabled
-# - name: nmstate
-#   version: "0.1.0"
-#   repository: "file://./charts/nmstate"
-#   condition: nmstate.enabled
-# - name: bookinfo
-#   version: "0.1.0"
-#   repository: "file://./charts/bookinfo"
-#   condition: bookinfo.enabled  
+dependencies:
+- name: operators
+  version: "0.1.0"
+  repository: "file://./charts/operators"
+  condition: operators.enabled
+- name: oauth
+  version: "0.1.0"
+  repository: "file://./charts/oauth"
+  condition: oauth.enabled
+- name: monitoring
+  version: "0.1.0"
+  repository: "file://./charts/monitoring"
+  condition: monitoring.enabled
+- name: namespace
+  version: "0.1.0"
+  repository: "file://./charts/namespace"
+  condition: namespace.enabled
+- name: nmstate
+  version: "0.1.0"
+  repository: "file://./charts/nmstate"
+  condition: nmstate.enabled
+- name: bookinfo
+  version: "0.1.0"
+  repository: "file://./charts/bookinfo"
+  condition: bookinfo.enabled  
   
 # - name: argocd
 #   version: "0.1.0"
