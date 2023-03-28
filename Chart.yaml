@@ -26,6 +26,10 @@ dependencies:
   version: "0.1.0"
   repository: "file://./charts/nmstate"
   condition: nmstate.enabled
+- name: bookinfo
+  version: "0.1.0"
+  repository: "file://./charts/bookinfo"
+  condition: bookinfo.enabled  
 # - name: argocd
 #   version: "0.1.0"
 #   repository: "file://./charts/argocd"
