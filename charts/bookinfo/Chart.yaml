@@ -1,5 +1,5 @@
 apiVersion: v2
-name: bookinfo-install-helm-chart
+name: bookinfo
 description: A Helm chart for deploying Bookinfo apps
 type: application
 version: 0.1.0
