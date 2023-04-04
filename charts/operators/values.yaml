@@ -45,15 +45,6 @@ operators:
     source: redhat-operators
     sourcenamespace: openshift-marketplace
     namespace: openshift-operators
-  gitops:
-    enabled: false
-    channel: stable
-    approval: Automatic
-    name: openshift-gitops-operator
-    # csv: openshift-gitops-operator.v1.5.6-0.1664915551.p
-    source: redhat-operators
-    sourcenamespace: openshift-marketplace
-    namespace: openshift-operators
   nmstate:
     enabled: false
     channel: stable
