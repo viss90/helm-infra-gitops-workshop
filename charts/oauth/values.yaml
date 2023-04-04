@@ -8,7 +8,7 @@ oauth:
     cluster_admin: admin-htpass
   keycloak:
     clientid: myclient-8
-    issuer: https://keycloak-keycloak.apps.argo-hub.sandbox1389.opentlc.com/realms/myrealm-8
+    issuer: https://keycloak-keycloak.apps.argo-hub.sandbox1444.opentlc.com/realms/myrealm-8
     secret: keycloak-secret
     data: 5QyPWvvLA8XvbxB92yqOq8u1lPJ20atd
     cm: keycloak-cm
