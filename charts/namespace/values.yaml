@@ -4,6 +4,7 @@
 networkpolicy:
   name: deny-by-default
   namespace: app
+  enabled: false
 resourcequota:
   objects:
     namespace: app
