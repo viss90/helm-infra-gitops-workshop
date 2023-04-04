@@ -3,6 +3,17 @@
 {{- range $key, $val := $.Values.apps -}}
 {{- range $ver, $ker := $val }}
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  {{- if $.Values.global.argocd.enabled }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+  {{- end }}
+  labels:
+    argocd.argoproj.io/managed-by: {{ $.Values.global.argocd.controller }} 
+  name: bookinfo
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
