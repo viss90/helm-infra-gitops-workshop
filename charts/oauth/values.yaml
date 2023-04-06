@@ -13,7 +13,7 @@ oauth:
     data: <path:kv-v2/data/demo#keycloak_secret> #5QyPWvvLA8XvbxB92yqOq8u1lPJ20atd
     cm: keycloak-cm
   ldap:
-    bindPassword: EXTRA_HELM_VALUE #<path:kv-v2/data/demo#ldap_bind_password> #Passw0rd
+    bindPassword: <path:kv-v2/data/demo#ldap_bind_password> #Passw0rd
     bindDN: 'uid=ldap_admin,cn=users,cn=accounts,dc=redhatlabs,dc=dev'
     base: "cn=student,cn=groups,cn=accounts,dc=redhatlabs,dc=dev"
     domain: "dc=redhatlabs,dc=dev"

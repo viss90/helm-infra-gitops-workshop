@@ -7,7 +7,7 @@ global:
   oauth:
     enabled: false
   monitoring: 
-    enabled: false
+    enabled: true
   namespace:
     enabled: false
   nmstate: 
