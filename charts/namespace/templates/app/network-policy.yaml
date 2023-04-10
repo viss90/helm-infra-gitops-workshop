@@ -7,7 +7,7 @@ metadata:
   name: {{ $.Values.networkpolicy.name }}
   namespace: {{ $.Values.networkpolicy.namespace }}
 spec:
-  podSelector:
+  podSelector: {}
   ingress: []
 {{- end -}}
 {{- end -}}
