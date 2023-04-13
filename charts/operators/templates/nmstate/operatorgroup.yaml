@@ -8,7 +8,7 @@ metadata:
   annotations:
     olm.providedAPIs: NMState.v1.nmstate.io
 {{- if $.Values.global.argocd.enabled }}
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "-10"
 {{- end }}
   name: openshift-nmstate-sno
   namespace: {{ $.Values.operators.nmstate.namespace }}

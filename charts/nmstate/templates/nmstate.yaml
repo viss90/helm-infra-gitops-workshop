@@ -1,0 +1,10 @@
+{{- if $.Values.global.render -}}
+apiVersion: nmstate.io/v1
+kind: NMState
+metadata:
+  name: nmstate
+{{- if $.Values.global.argocd.enabled }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+{{- end }}  
+{{- end -}}  
