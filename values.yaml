@@ -1,15 +1,16 @@
 oauth:
   enabled: false
 bookinfo:
-    enabled: false
-operators: 
   enabled: false
+operators: 
+  enabled: true
 monitoring: 
   enabled: false
 namespace:
   enabled: false
 nmstate: 
-  enabled: false
+  enabled: true
+
 global:
   render: true
   argocd:
