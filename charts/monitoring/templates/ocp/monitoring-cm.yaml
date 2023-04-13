@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.monitoring.enabled -}}
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -9,5 +8,4 @@ metadata:
 data:
   config.yaml: |
     enableUserWorkload: true 
-{{- end -}}
 {{- end -}}    

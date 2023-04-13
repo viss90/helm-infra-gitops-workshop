@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.operators.enabled -}}
 {{- if $.Values.operators.nmstate.enabled -}}
 ---
 apiVersion: v1
@@ -19,6 +18,5 @@ metadata:
 spec:
   finalizers:
   - kubernetes
-{{- end -}}
 {{- end -}}
 {{- end -}}

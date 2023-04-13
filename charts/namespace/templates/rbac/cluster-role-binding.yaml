@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.namespace.enabled -}}
 {{- range $.Values.clusterrole }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -15,5 +14,4 @@ subjects:
   kind: {{ .subjects.kind }}
   name: {{ .subjects.name }}
 {{- end }}  
-{{- end -}}
 {{- end -}} 

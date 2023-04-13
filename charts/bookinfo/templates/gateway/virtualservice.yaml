@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.bookinfo.enabled -}}
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -33,5 +32,4 @@ spec:
         host: productpage
         port:
           number: 9080
-{{- end -}}
 {{- end -}}

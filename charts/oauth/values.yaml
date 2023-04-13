@@ -1,39 +1,39 @@
 
 # OPC Oauth configuration
 
-oauth:
-  config_oauth_namespace: openshift-config
-  htpasswd:
-    secret: htpass-secret
-    cluster_admin: admin-htpass
-  keycloak:
-    clientid: myclient-8
-    issuer: https://keycloak-keycloak.apps.argo-hub.sandbox1444.opentlc.com/realms/myrealm-8
-    secret: keycloak-secret
-    data: 5QyPWvvLA8XvbxB92yqOq8u1lPJ20atd
-    cm: keycloak-cm
-  ldap:
-    bindPassword: Passw0rd
-    bindDN: 'uid=ldap_admin,cn=users,cn=accounts,dc=redhatlabs,dc=dev'
-    base: "cn=student,cn=groups,cn=accounts,dc=redhatlabs,dc=dev"
-    domain: "dc=redhatlabs,dc=dev"
-    sync:
-      ldap_group_membership_attributes: '["member"]'
-      ldap_group_name_attributes: '["cn"]'
-      ldap_group_uid_attribute: ipaUniqueID
-      ldap_groups_filter: (&(objectclass=ipausergroup)(memberOf=cn=student,cn=groups,cn=accounts,dc=redhatlabs,dc=dev))
-      ldap_groups_search_base: 'cn=groups,cn=accounts,dc=redhatlabs,dc=dev'
-      ldap_groups_whitelist: ''
-      ldap_url: 'ldap://10.0.198.47:32713'
-      ldap_user_name_attributes: '["uid"]'
-      ldap_user_uid_attribute: dn
-      ldap_users_search_base: 'cn=users,cn=accounts,dc=redhatlabs,dc=dev'
-      namespace: ipa
-      schedule: '* * * * *'  # '@hourly'
-      failed_jobs_history_limit: "5"
-      image: registry.access.redhat.com/openshift3/ose-cli
-      image_tag: v3.11
-      job_name: cronjob-ldap-group-sync
-      job_service_account: ldap-group-syncer
-      success_jobs_history_limit: "5"
+
+config_oauth_namespace: openshift-config
+htpasswd:
+  secret: htpass-secret
+  cluster_admin: admin-htpass
+keycloak:
+  clientid: myclient-8
+  issuer: https://keycloak-keycloak.apps.argo-hub.sandbox1444.opentlc.com/realms/myrealm-8
+  secret: keycloak-secret
+  data: 5QyPWvvLA8XvbxB92yqOq8u1lPJ20atd
+  cm: keycloak-cm
+ldap:
+  bindPassword: Passw0rd
+  bindDN: 'uid=ldap_admin,cn=users,cn=accounts,dc=redhatlabs,dc=dev'
+  base: "cn=student,cn=groups,cn=accounts,dc=redhatlabs,dc=dev"
+  domain: "dc=redhatlabs,dc=dev"
+  sync:
+    ldap_group_membership_attributes: '["member"]'
+    ldap_group_name_attributes: '["cn"]'
+    ldap_group_uid_attribute: ipaUniqueID
+    ldap_groups_filter: (&(objectclass=ipausergroup)(memberOf=cn=student,cn=groups,cn=accounts,dc=redhatlabs,dc=dev))
+    ldap_groups_search_base: 'cn=groups,cn=accounts,dc=redhatlabs,dc=dev'
+    ldap_groups_whitelist: ''
+    ldap_url: 'ldap://10.0.198.47:32713'
+    ldap_user_name_attributes: '["uid"]'
+    ldap_user_uid_attribute: dn
+    ldap_users_search_base: 'cn=users,cn=accounts,dc=redhatlabs,dc=dev'
+    namespace: ipa
+    schedule: '* * * * *'  # '@hourly'
+    failed_jobs_history_limit: "5"
+    image: registry.access.redhat.com/openshift3/ose-cli
+    image_tag: v3.11
+    job_name: cronjob-ldap-group-sync
+    job_service_account: ldap-group-syncer
+    success_jobs_history_limit: "5"
   

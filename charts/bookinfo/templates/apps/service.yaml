@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.bookinfo.enabled -}}
 {{- range $key, $val := $.Values.apps }}
 ---
 apiVersion: v1
@@ -23,5 +22,4 @@ spec:
   selector:
     app: {{ $key }}
 {{- end }}
-{{- end -}}
 {{- end -}}

@@ -1,12 +1,11 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.oauth.enabled -}}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
     template: cronjob-ldap-group-sync
   name: ldap-group-syncer
-  namespace: {{ .Values.oauth.ldap.sync.namespace }}
+  namespace: {{ .Values.ldap.sync.namespace }}
 {{- if $.Values.global.argocd.enabled }}
   annotations:
     argocd.argoproj.io/sync-wave: "5"
@@ -22,5 +21,4 @@ rules:
   - list
   - create
   - update
-{{- end -}}
 {{- end -}}

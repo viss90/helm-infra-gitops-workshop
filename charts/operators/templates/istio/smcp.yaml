@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.operators.enabled -}}
 {{- if $.Values.operators.servicemesh.enabled -}}
 {{- if $.Values.istio.enabled -}}
 apiVersion: maistra.io/v2
@@ -56,6 +55,5 @@ spec:
   telemetry:
     type: Istiod
 {{- end -}}
-{{- end -}}
-{{- end -}}  
+{{- end -}} 
 {{- end -}}  

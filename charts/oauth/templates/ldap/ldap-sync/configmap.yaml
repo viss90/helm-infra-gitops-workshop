@@ -1,44 +1,42 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.oauth.enabled -}}
 apiVersion: v1
 data:
   ldap-group-sync.yaml: |
     kind: "LDAPSyncConfig"
     apiVersion: "v1"
-    url: "{{ .Values.oauth.ldap.sync.ldap_url }}" 
+    url: "{{ .Values.ldap.sync.ldap_url }}" 
     insecure: true
-    bindDN: "{{ .Values.oauth.ldap.bindDN }}"
+    bindDN: "{{ .Values.ldap.bindDN }}"
     bindPassword:
       file: "/etc/secrets/bind_password"
     rfc2307:
       groupsQuery:
-        baseDN: "{{ .Values.oauth.ldap.sync.ldap_groups_search_base }}"
+        baseDN: "{{ .Values.ldap.sync.ldap_groups_search_base }}"
         scope: "sub"
         derefAliases: "never"
-        filter: "{{ .Values.oauth.ldap.sync.ldap_groups_filter }}"
+        filter: "{{ .Values.ldap.sync.ldap_groups_filter }}"
         pageSize: 0
-      groupUIDAttribute: "{{ .Values.oauth.ldap.sync.ldap_group_uid_attribute }}"
-      groupNameAttributes: {{ .Values.oauth.ldap.sync.ldap_group_name_attributes }}
-      groupMembershipAttributes: {{ .Values.oauth.ldap.sync.ldap_group_membership_attributes }}
+      groupUIDAttribute: "{{ .Values.ldap.sync.ldap_group_uid_attribute }}"
+      groupNameAttributes: {{ .Values.ldap.sync.ldap_group_name_attributes }}
+      groupMembershipAttributes: {{ .Values.ldap.sync.ldap_group_membership_attributes }}
       usersQuery:
-        baseDN: "{{ .Values.oauth.ldap.sync.ldap_users_search_base }}"
+        baseDN: "{{ .Values.ldap.sync.ldap_users_search_base }}"
         scope: "sub"
         derefAliases: "never"
         pageSize: 0
-      userNameAttributes: {{ .Values.oauth.ldap.sync.ldap_user_name_attributes }}
-      userUIDAttribute: "{{ .Values.oauth.ldap.sync.ldap_user_uid_attribute }}"
+      userNameAttributes: {{ .Values.ldap.sync.ldap_user_name_attributes }}
+      userUIDAttribute: "{{ .Values.ldap.sync.ldap_user_uid_attribute }}"
       tolerateMemberNotFoundErrors: true
       tolerateMemberOutOfScopeErrors: true
-  whitelist.txt: {{ .Values.oauth.ldap.sync.ldap_groups_whitelist | quote }}
+  whitelist.txt: {{ .Values.ldap.sync.ldap_groups_whitelist | quote }}
 kind: ConfigMap
 metadata:
   labels:
     template: cronjob-ldap-group-sync
   name: ldap-config
-  namespace: {{ .Values.oauth.ldap.sync.namespace }}
+  namespace: {{ .Values.ldap.sync.namespace }}
 {{- if $.Values.global.argocd.enabled }}
   annotations:
     argocd.argoproj.io/sync-wave: "15"
 {{- end }}    
-{{- end -}}
 {{- end -}}

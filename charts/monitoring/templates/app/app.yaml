@@ -1,5 +1,5 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.monitoring.enabled -}}
+---
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -66,5 +66,4 @@ spec:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
   wildcardPolicy: None
-{{- end -}}
 {{- end -}}  

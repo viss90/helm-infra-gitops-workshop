@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.monitoring.enabled -}}
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -16,5 +15,4 @@ spec:
   selector:
     matchLabels:
       app: {{ $.Values.app.appname }}
-{{- end -}}
 {{- end -}}      

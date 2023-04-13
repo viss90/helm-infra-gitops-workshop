@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.bookinfo.enabled -}}
 {{- range $key, $val := $.Values.apps }}
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -24,5 +23,4 @@ spec:
       version: {{ $ker.version }}
   {{- end }}
 {{- end }}
-{{- end -}}
 {{- end -}}

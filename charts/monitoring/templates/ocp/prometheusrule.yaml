@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.monitoring.enabled -}}
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
@@ -14,5 +13,4 @@ spec:
       expr: {{ $.Values.prometheus.expr }}
       labels:
         notifier: {{ $.Values.prometheus.notifier }}
-{{- end -}}
 {{- end -}}         

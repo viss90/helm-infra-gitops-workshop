@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.bookinfo.enabled -}}
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
@@ -21,5 +20,4 @@ spec:
       protocol: HTTP
     hosts:
     - "*"
-{{- end -}}
 {{- end -}}
