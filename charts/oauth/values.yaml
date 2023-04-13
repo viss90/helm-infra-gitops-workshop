@@ -8,9 +8,9 @@ htpasswd:
   cluster_admin: admin-htpass
 keycloak:
   clientid: myclient-8
-  issuer: https://keycloak-keycloak.apps.argo-hub.sandbox1444.opentlc.com/realms/myrealm-8
+  issuer: https://keycloak-keycloak.apps.argo-hub.<domain>.opentlc.com/realms/myrealm-<name>
   secret: keycloak-secret
-  data: 5QyPWvvLA8XvbxB92yqOq8u1lPJ20atd
+  data: <your_keycloak_secret_data
   cm: keycloak-cm
 ldap:
   bindPassword: Passw0rd
@@ -24,7 +24,7 @@ ldap:
     ldap_groups_filter: (&(objectclass=ipausergroup)(memberOf=cn=student,cn=groups,cn=accounts,dc=redhatlabs,dc=dev))
     ldap_groups_search_base: 'cn=groups,cn=accounts,dc=redhatlabs,dc=dev'
     ldap_groups_whitelist: ''
-    ldap_url: 'ldap://10.0.198.47:32713'
+    ldap_url: 'ldap://<ip>:<nodeport>'
     ldap_user_name_attributes: '["uid"]'
     ldap_user_uid_attribute: dn
     ldap_users_search_base: 'cn=users,cn=accounts,dc=redhatlabs,dc=dev'
