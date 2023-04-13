@@ -1,12 +1,11 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.oauth.enabled -}}
 apiVersion: rbac.authorization.k8s.io/v1
 groupNames: null
 kind: ClusterRoleBinding
 metadata:
   labels:
     template: cronjob-ldap-group-sync
-  name: {{ .Values.oauth.ldap.sync.namespace }}-ldap-group-syncers
+  name: {{ .Values.ldap.sync.namespace }}-ldap-group-syncers
 {{- if $.Values.global.argocd.enabled }}
   annotations:
     argocd.argoproj.io/sync-wave: "15"
@@ -17,7 +16,6 @@ roleRef:
   kind: ClusterRole
 subjects:
 - kind: ServiceAccount
-  name: {{ .Values.oauth.ldap.sync.job_service_account }}
-  namespace: {{ .Values.oauth.ldap.sync.namespace }}
-{{- end -}}
+  name: {{ .Values.ldap.sync.job_service_account }}
+  namespace: {{ .Values.ldap.sync.namespace }}
 {{- end -}}

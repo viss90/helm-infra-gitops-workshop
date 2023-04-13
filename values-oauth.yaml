@@ -1,0 +1,5 @@
+
+oauth:
+  enabled: true   
+  htpasswd:
+    secret: xxxx

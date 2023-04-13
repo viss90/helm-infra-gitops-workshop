@@ -1,19 +1,17 @@
+oauth:
+  enabled: false
+bookinfo:
+    enabled: false
+operators: 
+  enabled: false
+monitoring: 
+  enabled: false
+namespace:
+  enabled: false
+nmstate: 
+  enabled: false
 global:
   render: true
-  bookinfo:
-    enabled: false
-  operators: 
-    enabled: false
-  oauth:
-    enabled: false
-  monitoring: 
-    enabled: true
-  namespace:
-    enabled: false
-  nmstate: 
-    enabled: false
-  sealed: 
-    enabled: false
   argocd:
     enabled: true
     controller: openshift-operators #argocd

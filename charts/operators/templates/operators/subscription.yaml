@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.operators.enabled -}}
 {{- range $key, $val := $.Values.operators }}
 {{- if $val.enabled }}
 ---
@@ -23,5 +22,4 @@ spec:
 {{- end }}
 {{- end }}
 {{- end }}
-{{- end -}}
 {{- end -}}  

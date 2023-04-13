@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.namespace.enabled -}}
 {{- if $.Values.networkpolicy.enabled -}}
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
@@ -9,6 +8,5 @@ metadata:
 spec:
   podSelector: {}
   ingress: []
-{{- end -}}
 {{- end -}}
 {{- end -}}  

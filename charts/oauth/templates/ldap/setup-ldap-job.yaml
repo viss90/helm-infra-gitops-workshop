@@ -1,5 +1,4 @@
 {{- if .Values.global.render -}}
-{{- if .Values.global.oauth.enabled -}}
 ---
 apiVersion: batch/v1
 kind: Job
@@ -12,7 +11,7 @@ metadata:
 {{- if $.Values.global.argocd.enabled }}
     argocd.argoproj.io/sync-wave: "10"
 {{- end }}        
-  namespace: {{ $.Values.oauth.config_oauth_namespace }}    
+  namespace: {{ $.Values.config_oauth_namespace }}    
 spec:
   template:
     spec:
@@ -36,8 +35,8 @@ spec:
             fi
             oc patch oauth/cluster --type=json -p '[{"op":"add", "path":"/spec/identityProviders/-",
               "value":{"ldap": {"attributes": {"email": ["mail"], "id": ["dn"], "name": ["displayName"], "preferredUsername": ["uid"]},
-              "bindDN": {{ .Values.oauth.ldap.bindDN | quote }}, "bindPassword": {"name": "ldap-bind-password" },
-              "insecure": true, "url": "{{ .Values.oauth.ldap.sync.ldap_url }}/{{ .Values.oauth.ldap.domain }}?uid?sub?(memberOf={{ .Values.oauth.ldap.base }})" },
+              "bindDN": {{ .Values.ldap.bindDN | quote }}, "bindPassword": {"name": "ldap-bind-password" },
+              "insecure": true, "url": "{{ .Values.ldap.sync.ldap_url }}/{{ .Values.ldap.domain }}?uid?sub?(memberOf={{ .Values.ldap.base }})" },
               "mappingMethod": "claim", "name": "FreeIPA", "type": "LDAP"}}]'
             exit 0
         image: "quay.io/openshift/origin-cli:latest"
@@ -48,5 +47,4 @@ spec:
       serviceAccount: config-oauth
       serviceAccountName: config-oauth
       terminationGracePeriodSeconds: 10
-{{- end -}}
 {{- end -}}  

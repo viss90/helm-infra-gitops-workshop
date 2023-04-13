@@ -1,9 +1,8 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.oauth.enabled -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ $.Values.oauth.keycloak.cm }}
+  name: {{ $.Values.keycloak.cm }}
   namespace: openshift-config
 {{- if $.Values.global.argocd.enabled }}
   annotations:
@@ -12,5 +11,4 @@ metadata:
 data:
   ca.crt: |
 {{ .Files.Get "files/ca.crt" | indent 4 }}
-{{- end -}}
 {{- end -}}

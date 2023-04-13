@@ -1,5 +1,4 @@
 {{- if .Values.global.render -}}
-{{- if .Values.global.oauth.enabled -}}
 ---
 apiVersion: batch/v1
 kind: Job
@@ -12,7 +11,7 @@ metadata:
 {{- if $.Values.global.argocd.enabled }}
     argocd.argoproj.io/sync-wave: "10"
 {{- end }}        
-  namespace: {{ $.Values.oauth.config_oauth_namespace }}
+  namespace: {{ $.Values.config_oauth_namespace }}
 spec:
   template:
     spec:
@@ -36,8 +35,8 @@ spec:
             fi
             oc patch oauth/cluster --type=json -p '[{"op":"add", "path":"/spec/identityProviders/-",
               "value":{"openID": {"claims": {"preferredUsername": ["preferred_username"], "name": ["name"], "email": ["email"], "groups": ["grups"]},
-              "clientID": {{ $.Values.oauth.keycloak.clientid }}, "clientSecret": {"name": {{ $.Values.oauth.keycloak.secret }} },
-              "ca": {"name": {{ $.Values.oauth.keycloak.cm }} }, "issuer": "{{ $.Values.oauth.keycloak.issuer }}"},
+              "clientID": {{ $.Values.keycloak.clientid }}, "clientSecret": {"name": {{ $.Values.keycloak.secret }} },
+              "ca": {"name": {{ $.Values.keycloak.cm }} }, "issuer": "{{ $.Values.keycloak.issuer }}"},
               "mappingMethod": "claim", "name": "keycloak", "type": "OpenID"}}]'
             exit 0
         image: "quay.io/openshift/origin-cli:latest"
@@ -48,5 +47,4 @@ spec:
       serviceAccount: config-oauth
       serviceAccountName: config-oauth
       terminationGracePeriodSeconds: 10
-{{- end -}}
 {{- end -}}  

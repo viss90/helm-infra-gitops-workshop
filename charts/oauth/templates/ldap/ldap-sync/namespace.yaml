@@ -1,14 +1,12 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.global.oauth.enabled -}}
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: {{ .Values.oauth.ldap.sync.namespace }}
+  name: {{ .Values.ldap.sync.namespace }}
 {{- if $.Values.global.argocd.enabled }}
   labels:
     argocd.argoproj.io/managed-by: {{ $.Values.global.argocd.controller }}
   annotations:
     argocd.argoproj.io/sync-wave: "-15"
 {{- end }}    
-{{- end -}}
 {{- end -}}
