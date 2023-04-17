@@ -9,7 +9,7 @@ monitoring:
 namespace:
   enabled: false
 nmstate: 
-  enabled: true
+  enabled: false
 
 global:
   render: true

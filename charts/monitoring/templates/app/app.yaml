@@ -1,14 +1,5 @@
 {{- if $.Values.global.render -}}
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: app
-{{- if $.Values.global.argocd.enabled }}
-  labels:
-    argocd.argoproj.io/managed-by: {{ $.Values.global.argocd.controller }}
-{{- end }}  
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:

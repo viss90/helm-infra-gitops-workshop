@@ -37,7 +37,7 @@ operators:
     sourcenamespace: openshift-marketplace
     namespace: openshift-operators
   servicemesh:
-    enabled: false
+    enabled: true
     channel: stable
     approval: Automatic
     name: servicemeshoperator
@@ -57,7 +57,7 @@ operators:
 
 # Istio Settings
 istio:
-  enabled: false
+  enabled: true
   namespace: istio-system
   controlplane: basic
   smcp:
