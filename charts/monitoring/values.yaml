@@ -1,8 +1,10 @@
 # Monitoring conf
 
 ocp:
+  enabled: true
   cmname: cluster-monitoring-config
 app:
+  enabled: false
   appname: back-springboot
   namespace: app
   replicas: 1
