@@ -1,4 +1,5 @@
 {{- if $.Values.global.render -}}
+{{- if $.Values.ocp.enabled -}}
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -9,3 +10,4 @@ data:
   config.yaml: |
     enableUserWorkload: true 
 {{- end -}}    
+{{- end -}}
