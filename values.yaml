@@ -10,7 +10,8 @@ namespace:
   enabled: false
 nmstate: 
   enabled: false
-
+app:
+  enabled: false
 global:
   render: true
   argocd:

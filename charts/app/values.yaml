@@ -1,0 +1,14 @@
+# Monitoring conf
+
+app:
+  enabled: false
+  appname: back-springboot
+  namespace: app
+  replicas: 1
+  image: quay.io/acidonpe/jump-app-back-springboot:monitoring
+  imagename: back-springboot
+  port: 8443
+  servicename: back-springboot
+  portname: http-8443
+  protocol: TCP
+  routename: back-springboot
