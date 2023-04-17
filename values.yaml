@@ -3,7 +3,7 @@ oauth:
 bookinfo:
   enabled: false
 operators: 
-  enabled: true
+  enabled: false
 monitoring: 
   enabled: false
 namespace:
@@ -15,4 +15,4 @@ global:
   render: true
   argocd:
     enabled: true
-    controller: openshift-operators #argocd
+    controller: openshift-gitops #argocd
