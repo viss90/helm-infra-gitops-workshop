@@ -14,6 +14,6 @@ servicemonitor:
   name: prometheus-back-springboot
   scheme: http
   namespace: app
-  portname: 8443
+  portname: http-8443
   appname: back-springboot
   namespace: app
