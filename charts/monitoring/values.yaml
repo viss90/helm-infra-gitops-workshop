@@ -1,20 +1,7 @@
 # Monitoring conf
 
 ocp:
-  enabled: true
   cmname: cluster-monitoring-config
-app:
-  enabled: false
-  appname: back-springboot
-  namespace: app
-  replicas: 1
-  image: quay.io/acidonpe/jump-app-back-springboot:monitoring
-  imagename: back-springboot
-  port: 8443
-  servicename: back-springboot
-  portname: http-8443
-  protocol: TCP
-  routename: back-springboot
 prometheus:
   name: example-alert
   namespace: app
@@ -26,3 +13,7 @@ servicemonitor:
   k8sapp: prometheus-back-springboot
   name: prometheus-back-springboot
   scheme: http
+  namespace: app
+  portname: 8443
+  appname: back-springboot
+  namespace: app

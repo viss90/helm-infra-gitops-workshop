@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.ocp.enabled -}}
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -8,6 +7,5 @@ metadata:
   namespace: openshift-monitoring
 data:
   config.yaml: |
-    enableUserWorkload: true 
-{{- end -}}    
+    enableUserWorkload: true    
 {{- end -}}

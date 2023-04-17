@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.app.enabled -}}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -57,6 +56,5 @@ spec:
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
-  wildcardPolicy: None
-{{- end -}}  
+  wildcardPolicy: None 
 {{- end -}}

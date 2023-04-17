@@ -1,5 +1,4 @@
 {{- if $.Values.global.render -}}
-{{- if $.Values.ocp.enabled -}}
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -7,14 +6,13 @@ metadata:
   labels:
     k8s-app: {{ $.Values.servicemonitor.k8sapp }}
   name: {{ $.Values.servicemonitor.name }}
-  namespace: {{ $.Values.app.namespace }}
+  namespace: {{ $.Values.servicemonitor.namespace }}
 spec:
   endpoints:
   - interval: 30s
-    port: {{ $.Values.app.portname }}
+    port: {{ $.Values.servicemonitor.portname }}
     scheme: {{ $.Values.servicemonitor.scheme }}
   selector:
     matchLabels:
-      app: {{ $.Values.app.appname }}
-{{- end -}}      
+      app: {{ $.Values.servicemonitor.appname }}     
 {{- end -}}
