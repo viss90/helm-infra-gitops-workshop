@@ -6,7 +6,7 @@ metadata:
   labels:
     k8s-app: {{ $.Values.servicemonitor.k8sapp }}
   name: {{ $.Values.servicemonitor.name }}
-  namespace: {{ $.Values.app.namespace }}
+  namespace: {{ $.Values.servicemonitor.namespace }}
 spec:
   endpoints:
   - interval: 30s
@@ -14,5 +14,5 @@ spec:
     scheme: {{ $.Values.servicemonitor.scheme }}
   selector:
     matchLabels:
-      app: {{ $.Values.app.appname }}    
+      app: {{ $.Values.servicemonitor.appname }}    
 {{- end -}}
