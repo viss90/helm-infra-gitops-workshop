@@ -1,6 +1,0 @@
-monitoring:
-  enabled: true
-  ocp: 
-    enabled: false 
-  app:
-    enabled: true
