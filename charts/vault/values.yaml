@@ -1,0 +1,20 @@
+# Default values for hello-secrets.
+
+name: "vault"
+namespace: "vault"
+
+replicaCount: 1
+
+image:
+  repository: quay.io/frarodroc/hello-secrets
+  tag: "1.0.0"
+
+service:
+  type: ClusterIP
+  port: 8080
+  portName: http-8080
+
+vault:
+  key: password
+  placeholder: "<password | base64encode>"
+  path: "kv-v2/data/demo"
