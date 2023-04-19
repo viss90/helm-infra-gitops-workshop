@@ -1,3 +1,4 @@
+{{- if $.Values.global.render -}}
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -27,4 +28,4 @@ spec:
           env:
             - name: ENV_VAR_KEY
               value: {{ .Values.vault.key }}
-
+{{- end -}} 
