@@ -1,3 +1,4 @@
+{{- if $.Values.global.render -}}
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
@@ -12,4 +13,5 @@ spec:
   port:
     targetPort: {{ .Values.service.portName }}
   wildcardPolicy: None
+{{- end -}}   
 
