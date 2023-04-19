@@ -12,6 +12,8 @@ nmstate:
   enabled: false
 app:
   enabled: false
+vault:
+  enabled: false  
 global:
   render: true
   argocd:

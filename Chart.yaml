@@ -34,7 +34,7 @@ dependencies:
   version: "0.1.0"
   repository: "file://./charts/app"
   condition: app.enabled
-# - name: argocd
-#   version: "0.1.0"
-#   repository: "file://./charts/argocd"
-#   condition: argocd.enabled
+- name: vault
+  version: "0.1.0"
+  repository: "file://./charts/vault"
+  condition: vault.enabled
