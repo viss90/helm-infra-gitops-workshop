@@ -1,3 +1,5 @@
+:warning: **Repo added to this [organization](https://github.com/WorkshopGitOpsInfra)**, this is view-only.
+
 # helm-infra-gitops-workshop
 
 This repo is part of the [ArgoCD Managing Infrastructure workshop](https://romerobu.github.io/manual-workshop-infra/manual-workshop-infra/index.html) and is intended to deploy day 2 operations using helm charts. 
