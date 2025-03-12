@@ -4,7 +4,7 @@ app:
   enabled: false
   appname: back-springboot
   namespace: app
-  replicas: 1
+  replicas: 5
   image: quay.io/acidonpe/jump-app-back-springboot:monitoring
   imagename: back-springboot
   port: 8443
