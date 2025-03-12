@@ -1,4 +1,4 @@
 namespace:
   enabled: true #Enable dependency
   networkpolicy:
-    enabled: true
+    enabled: false
